@@ -11,7 +11,9 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div>
-        <h1>{`Wellie viaja de ${AbcdLandMap[City.A].name} a ${
+        <h1>{`Wellie faz o percurso ${AbcdLandMap[City.A].name} - ${
+          AbcdLandMap[City.B].name
+        } - ${AbcdLandMap[City.C].name} - ${
           AbcdLandMap[City.D].name
         } em ${Intl.NumberFormat('pt').format(
           travelLength(
