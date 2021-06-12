@@ -1,34 +1,50 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Abcdlândia
 
-## Getting Started
+## Requisitos:
 
-First, run the development server:
+Que distância existe de A para B?
+de A para B existem 4 lutts
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+Que distancia existe de B para C?
+de B para C existem 8 lutts
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Que distancia existe de C para D?
+de C para D existem 10 lutts
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+Que cumprimento tem um lutt?
+um lutt tem 10 mipps
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+Que é um Mipp?
+uma medida de cumprimento
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+Quantos mipps tem um kilometro?
+um kilometro tem 2 mipps
 
-## Learn More
+Que é um Dar?
+um Dar tem 10 wors
 
-To learn more about Next.js, take a look at the following resources:
+Que é um Wor?
+um wor tem 5 mirs
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Que um Mir?
+unidade de tempo
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+Quantos mirs tem uma hora?
+uma hora tem 2 mirs
 
-## Deploy on Vercel
+Qual a velocidade da pessoa de A para B?
+a pessoa viaja a velocidade de 24 lutts por wor
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Qual a velocidade da pessoa de B para C?
+a pessoa viaja a velocidade de 30 lutts por wor
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Qual a velocidade da pessoa de C para D?
+a pessoa viaja a velocidade de 30 lutts por wor
+
+**Calcular a distância total percorrida pela pessoa fazendo o percurso A-B-C-D**
+
+## Análise
+
+* O sistema não requer entradas do usuário
+
+* O sistema não requer persistência de dados ou autenticação
