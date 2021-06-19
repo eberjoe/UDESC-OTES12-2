@@ -13,3 +13,5 @@ export const AbcdLandMap = [
   { name: 'C', position: { x: 0, y: 12 } },
   { name: 'D', position: { x: 0, y: 22 } }
 ];
+
+export const Globals = {};

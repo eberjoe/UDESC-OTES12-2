@@ -1,4 +1,4 @@
-import { AbcdLandMap, City } from '../../globals/consts';
+import { AbcdLandMap, City, Globals } from '../../globals/consts';
 import { TravelLength } from '../../components/DistanceCalculator';
 import styles from '../../styles/Home.module.css';
 
@@ -6,7 +6,7 @@ export default function Home() {
   return (
     <div className={styles.container}>
       <div>
-        <h1>{`Wellie faz o percurso ${AbcdLandMap[City.A].name} - ${
+        <h1>{`${Globals['name']} faz o percurso ${AbcdLandMap[City.A].name} - ${
           AbcdLandMap[City.B].name
         } - ${AbcdLandMap[City.C].name} - ${
           AbcdLandMap[City.D].name
