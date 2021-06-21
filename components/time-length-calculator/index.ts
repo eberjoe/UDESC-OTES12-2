@@ -1,6 +1,6 @@
 import { Point2D } from '../../globals/consts';
 
-export const TravelLength = ({
+export const TimeLengthCalculator = ({
   pointA,
   pointB,
   speed

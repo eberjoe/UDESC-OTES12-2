@@ -1,6 +1,6 @@
+import axios from 'axios';
 import { useRouter } from 'next/router';
 import { useState } from 'react';
-import { Globals } from '../../globals/consts';
 
 export const Identification = () => {
   const [name, setName] = useState('');
@@ -8,9 +8,9 @@ export const Identification = () => {
 
   return (
     <form
-      onSubmit={(e) => {
+      onSubmit={async (e) => {
         e.preventDefault();
-        Globals['name'] = name;
+        await axios.post('/api/create-user', { name: name });
         router.push('results');
       }}
     >
