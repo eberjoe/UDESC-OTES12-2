@@ -1,5 +1,6 @@
 # Abcdlândia
 
+This little project exemplifies the use of Next.js APIs with Prisma ORM.
 ## Requisitos:
 
 Que distância existe de A para B?
