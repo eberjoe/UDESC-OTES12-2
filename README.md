@@ -1,6 +1,10 @@
-# Abcdlândia
+# Come, Asteroid!
 
 This little project exemplifies the use of Next.js APIs with Prisma ORM.
+# Vem, Meteoro!
+
+Este pequeno projeto exemplifica a criação e uso de APIs dentro do *framework* Next.js, além do uso da ferramenta ORM Prisma.
+
 ## Requisitos:
 
 Que distância existe de A para B?

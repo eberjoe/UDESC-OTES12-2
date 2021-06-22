@@ -1,16 +1,47 @@
 html,
 body {
   padding: 0;
+  background: url(/images/background.png) repeat 5% 5%;
+  background-color: #000;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  animation: background .5s linear infinite alternate;
 }
 
 a {
-  color: inherit;
+  color: green;
   text-decoration: none;
 }
 
 * {
   box-sizing: border-box;
+}
+
+.container {
+  min-height: 90vh;
+  padding: 0 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+p, h1, h2, h3 {
+  color: #fff
+}
+
+footer {
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 2rem;
+}
+
+@keyframes background {
+  from {
+    background-position-y: 0rem;
+  }
+  to {
+    background-position-y: .1rem;
+  }
 }

@@ -1,6 +1,5 @@
 import { AbcdLandMap, City } from '../../globals/consts';
 import { TimeLengthCalculator } from '../../components/time-length-calculator';
-import styles from '../../styles/Home.module.css';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 
@@ -12,7 +11,7 @@ export default function Home() {
   }, []);
 
   return (
-    <div className={styles.container}>
+    <div className="container">
       <div>
         <h1>{`${user} faz o percurso ${AbcdLandMap[City.A].name} - ${
           AbcdLandMap[City.B].name
