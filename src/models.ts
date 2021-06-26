@@ -1,7 +1,8 @@
 export type AsteroidData = {
   id: string;
   name: string;
-  passTime: string;
+  passTimeFormatted: string;
+  passTime: number;
   passDistance: string;
   estDiameter: number;
   isDangerous: boolean;

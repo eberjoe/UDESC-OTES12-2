@@ -8,7 +8,7 @@ type AsteroidCardProps = AsteroidData & {
 export const AsteroidCard = ({
   name,
   passDistance,
-  passTime,
+  passTimeFormatted,
   estDiameter,
   isDangerous,
   handleclick
@@ -33,14 +33,14 @@ export const AsteroidCard = ({
       </p>
       <p>
         <b>Hora da aproximação: </b>
-        {passTime}
+        {passTimeFormatted}
       </p>
       <p>
         <b>Diâmetro estimado: </b>
         {`${Intl.NumberFormat('pt').format(estDiameter)} km`}
       </p>
       <p>
-        <b>{isDangerous ? 'Perigoso' : 'Sem Perigo'}</b>
+        <b>{isDangerous ? 'Perigoso!' : 'Sem perigo para a Terra'}</b>
       </p>
     </div>
   );

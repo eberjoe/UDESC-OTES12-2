@@ -15,8 +15,15 @@ export const Identification = () => {
     <form
       onSubmit={async (e) => {
         e.preventDefault();
-        await axios.post('/api/create-user', { name: name });
-        router.push('asteroids');
+        const user = await axios.get('/api/read-user', {
+          params: { name: name }
+        });
+        if (!user.data) {
+          await axios.post('/api/create-user', { name: name });
+          router.push('asteroids');
+        } else {
+          console.log(user.data);
+        }
       }}
     >
       <input
