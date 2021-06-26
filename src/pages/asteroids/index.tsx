@@ -12,19 +12,12 @@ import { Globals } from '../../global-vars';
 
 export default function Asteroids() {
   const mountedRef = useRef(true);
-  const [user, setUser] = useState(null);
   const [asteroids, setAsteroids] = useState<AsteroidData[]>(null);
 
   const router = useRouter();
 
   const load = useCallback(async () => {
     if (mountedRef.current) {
-      const user = await (
-        await axios.get('/api/read-user', {
-          params: { name: Globals['userName'] }
-        })
-      ).data;
-      setUser(user);
       const batch = await (await axios.get('/api/fetch-asteroids')).data;
       const now = new Date();
       const tempAsteroids = [];
@@ -78,20 +71,22 @@ export default function Asteroids() {
   }, [load]);
 
   const handleclick = async (id: string, passTime: number) => {
-    await axios.post('/api/book-trip', {
-      name: user.name,
-      asteroid_id: id,
-      departure_timestamp: new Date(passTime).toISOString()
-    });
+    if (Globals['userName']) {
+      await axios.post('/api/book-trip', {
+        name: Globals['userName'],
+        asteroid_id: id,
+        departure_timestamp: new Date(passTime).toISOString()
+      });
+    }
     router.push('farewell');
   };
 
   return (
     <div className="container">
-      {user && asteroids && (
+      {asteroids ? (
         <>
           <div>
-            <h1>{`${user.name}, agende sua viagem a bordo de um meteoro`}</h1>
+            <h1>{`${Globals['userName']}, agende sua viagem a bordo de um meteoro`}</h1>
           </div>
           <div className="asteroids-container">
             <ul>
@@ -107,9 +102,13 @@ export default function Asteroids() {
               ))}
             </ul>
           </div>
+          <Link href="/">Voltar</Link>
         </>
+      ) : (
+        <div>
+          <h1>Carregando dados...</h1>
+        </div>
       )}
-      <Link href="/">Voltar</Link>
     </div>
   );
 }

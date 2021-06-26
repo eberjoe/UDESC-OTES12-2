@@ -15,8 +15,8 @@ export const Identification = () => {
   return (
     <form
       onSubmit={async (e) => {
-        Globals['userName'] = name;
         e.preventDefault();
+        Globals['userName'] = name;
         const user = await (
           await axios.get('/api/read-user', {
             params: { name: name }
