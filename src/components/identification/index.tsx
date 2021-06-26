@@ -1,6 +1,7 @@
 import axios from 'axios';
 import { useRouter } from 'next/router';
 import { useEffect, useRef, useState } from 'react';
+import { Globals } from '../../global-vars';
 
 export const Identification = () => {
   const [name, setName] = useState('');
@@ -14,15 +15,20 @@ export const Identification = () => {
   return (
     <form
       onSubmit={async (e) => {
+        Globals['userName'] = name;
         e.preventDefault();
-        const user = await axios.get('/api/read-user', {
-          params: { name: name }
-        });
-        if (!user.data) {
+        const user = await (
+          await axios.get('/api/read-user', {
+            params: { name: name }
+          })
+        ).data;
+        if (!user) {
           await axios.post('/api/create-user', { name: name });
           router.push('asteroids');
+        } else if (!user.asteroid_id) {
+          router.push('asteroids');
         } else {
-          console.log(user.data);
+          router.push('booked');
         }
       }}
     >
@@ -32,7 +38,9 @@ export const Identification = () => {
         value={name}
         onChange={(e) => setName(e.target.value)}
       />
-      <button type="submit">Vai</button>
+      <button type="submit" disabled={!name}>
+        Vai
+      </button>
     </form>
   );
 };
